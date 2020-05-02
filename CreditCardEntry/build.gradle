@@ -4,11 +4,11 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.tipsi'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
     }
@@ -37,9 +37,11 @@ artifacts {
 }
 
 dependencies {
-    implementation 'com.android.support:support-compat:25.3.1'
-    implementation 'com.android.support:support-core-utils:25.3.1'
-    implementation 'com.android.support:support-core-ui:25.3.1'
-    implementation 'com.android.support:support-media-compat:25.3.1'
-    implementation 'com.android.support:support-fragment:25.3.1'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+//    implementation 'com.android.support:support-compat:25.3.1'
+//    implementation 'com.android.support:support-core-utils:25.3.1'
+//    implementation 'com.android.support:support-core-ui:25.3.1'
+//    implementation 'com.android.support:support-media-compat:25.3.1'
+//    implementation 'com.android.support:support-fragment:25.3.1'
 }

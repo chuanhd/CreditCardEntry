@@ -7,9 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.v4.os.ParcelableCompat;
-import android.support.v4.os.ParcelableCompatCreatorCallbacks;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.Gravity;
@@ -19,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.devmarvel.creditcardentry.R;
 import com.devmarvel.creditcardentry.internal.CreditCardEntry;
@@ -323,18 +322,22 @@ public class CreditCardForm extends RelativeLayout {
 			out.writeSparseArray(childrenStates);
 		}
 
-		public static final Creator<SavedState> CREATOR
-				= ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
+		public static final Parcelable.ClassLoaderCreator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>(){
 			@Override
-			public SavedState createFromParcel(Parcel in, ClassLoader loader) {
-				return new SavedState(in, loader);
+			public SavedState createFromParcel(Parcel parcel) {
+				return createFromParcel(parcel, null);
 			}
 
 			@Override
 			public SavedState[] newArray(int size) {
 				return new SavedState[size];
 			}
-		});
+
+			@Override
+			public SavedState createFromParcel(Parcel parcel, ClassLoader classLoader) {
+				return new SavedState(parcel, classLoader);
+			}
+		};
 	}
 
     /** helper & hint setting **/

@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion 19
+        targetSdkVersion 28
         applicationId "com.devmarvel.creditcardentry"
         versionCode 1
         versionName "1.0.0"
@@ -26,9 +26,9 @@ android {
 
 dependencies {
     implementation project(':CreditCardEntry')
-    implementation 'com.android.support:support-compat:25.3.1'
-    implementation 'com.android.support:support-core-utils:25.3.1'
-    implementation 'com.android.support:support-core-ui:25.3.1'
-    implementation 'com.android.support:support-media-compat:25.3.1'
-    implementation 'com.android.support:support-fragment:25.3.1'
+//    implementation 'com.android.support:support-compat:25.3.1'
+//    implementation 'com.android.support:support-core-utils:25.3.1'
+//    implementation 'com.android.support:support-core-ui:25.3.1'
+//    implementation 'com.android.support:support-media-compat:25.3.1'
+//    implementation 'com.android.support:support-fragment:25.3.1'
 }
